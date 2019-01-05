@@ -1,12 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+/**
+ * Twitter-Clone SPA Entry Point
+ */
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { default as BlueJacket } from 'bluejacket';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import { default as routes } from './routes';
+import { default as mixins } from './mixins';
+
+const router = new BlueJacket({
+    mixins
+});
+
+function setupRoutes() {
+    routes.forEach(setupRoute => setupRoute(router));
+};
+
+function init() {
+    setupRoutes();
+    router.resolve(window.location.pathname);
+};
+
+init();

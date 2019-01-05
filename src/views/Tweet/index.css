@@ -1,0 +1,8 @@
+.tweet {
+    padding: 1rem;
+}
+
+.tweet .author {
+    font-style: oblique;
+    padding: 0.5rem 0;
+}
