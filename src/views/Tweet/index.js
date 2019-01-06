@@ -10,10 +10,13 @@ class Tweet extends React.Component {
     static get defaultProps() {
         return {
             user: {},
-            content: ''
+            content: '',
+            replies: []
         };
     }
     render() {
+        const tweetReplies = this.props.replies.map(tweet => <Tweet key={tweet.id} {...tweet} />);
+
         const component = (
             <div
                 className="tweet">
@@ -24,6 +27,10 @@ class Tweet extends React.Component {
                 <div
                     className="content">
                     {this.props.content}
+                </div>
+                <div
+                    className="replies">
+                    {tweetReplies}
                 </div>
             </div>
         );

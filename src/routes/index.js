@@ -3,7 +3,9 @@
  */
 
 import { default as stream } from './stream'
+import { default as tweet } from './tweet'
 
 export default [
-    stream
+    stream,
+    tweet
 ];

@@ -1,3 +1,8 @@
 .stream.container {
     padding: 2rem;
 }
+
+.stream.container .tweet.container {
+    text-decoration: none;
+    cursor: pointer;
+}

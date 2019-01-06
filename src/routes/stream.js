@@ -7,7 +7,7 @@ import React from 'react';
 import StreamListView from '../views/StreamList';
 
 /**
- * Retrieves top 20 items from '/api/v1/:user/stream'
+ * Retrieves top 20 items from '/api/v1/:user/tweets'
  * And renders them here
  *
  * We'll assume that the user is always logged in and
@@ -30,7 +30,7 @@ async function list(context) {
 };
 
 function setup(router) {
-    router.handle('/stream', list);
+    router.handle('/tweets', list);
 };
 
 export default setup;

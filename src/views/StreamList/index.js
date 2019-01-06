@@ -16,7 +16,16 @@ class StreamList extends React.Component {
         };
     }
     render() {
-        const tweetItems = this.props.tweets.map(tweet => <Tweet key={tweet.id} {...tweet} />);
+        const tweetItems = this.props.tweets.map(tweet => {
+            return (
+                <a
+                    className="tweet container"
+                    key={tweet.id}
+                    href={`/tweet/${tweet.id}`} >
+                    <Tweet {...tweet} />
+                </a>
+            );
+        });
 
         const component = (
             <div
